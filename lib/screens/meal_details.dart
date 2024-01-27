@@ -17,7 +17,13 @@ class MealDetailsScreen extends StatefulWidget {
 }
 
 class _MealDetailsScreenState extends State<MealDetailsScreen> {
-  bool isFavourite = false;
+  late Meal meal;
+
+  @override
+  initState() {
+    meal = widget.meal;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +32,14 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
           IconButton(
             onPressed: () {
               widget.onToggleFavorite(widget.meal);
+              setState(() {
+                meal.isFavourite = !meal.isFavourite;
+              });
             },
-            icon: const Icon(Icons.star),
+            icon: Icon(
+              Icons.star,
+              color: meal.isFavourite ? Colors.yellow : null,
+            ),
           )
         ]),
         body: SingleChildScrollView(
