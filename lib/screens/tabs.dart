@@ -24,7 +24,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  int _selectedPageIndex = 0;
+  int _selectedPageIndex = 0; // Select current tab
   final List<Meal> _favoriteMeals = [];
   Map<Filter, bool> _selectedFilters = kInitialFilters;
 
@@ -94,13 +94,25 @@ class _TabsScreenState extends State<TabsScreen> {
       return true;
     }).toList();
 
+    // Index 0, Categories
     Widget activePage = CategoriesScreen(
       onToggleFavorite: _toggleMealFavoriteStatus,
       availableMeals: availableMeals,
     );
     var activePageTitle = 'Categories';
 
+    // Index 1, All Meals
     if (_selectedPageIndex == 1) {
+      List<Meal> allMeals = availableMeals.toList();
+      activePage = MealsScreen(
+        meals: allMeals,
+        onToggleFavorite: _toggleMealFavoriteStatus,
+      );
+      activePageTitle = 'All Meals';
+    }
+
+    // Index 2, Favorites
+    if (_selectedPageIndex == 2) {
       activePage = MealsScreen(
         meals: _favoriteMeals,
         onToggleFavorite: _toggleMealFavoriteStatus,
@@ -123,6 +135,10 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.set_meal),
             label: 'Categories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fastfood),
+            label: 'All Meals',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star),

@@ -12,8 +12,10 @@ final theme = ThemeData(
   ),
   textTheme: GoogleFonts.latoTextTheme(),
 );
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   final view = WidgetsBinding.instance.platformDispatcher.views.first;
   final size = view.physicalSize; // dx: 1080 px, dy: 2214 px
   final pixelRatio = view.devicePixelRatio; // 2.75
@@ -21,23 +23,17 @@ void main() {
   final width = size.shortestSide / pixelRatio; // 392.72 dp
   // Phone
   if (width < 600) {
-    // 600 dp
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
-    ]);
-    runApp(const App());
-    // Tablet
+    ]); // Tablet
   } else {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft])
-        .then((value) {
-      runApp(const App());
-    });
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
       DeviceOrientation.portraitUp,
     ]);
   }
+  runApp(const App());
 }
 
 class App extends StatefulWidget {

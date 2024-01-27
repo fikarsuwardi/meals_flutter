@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-// import 'package:meals/screens/tabs.dart';
-// import 'package:meals/widgets/main_drawer.dart';
-
 enum Filter {
   glutenFree,
   lactoseFree,
@@ -51,7 +48,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
       //           builder: (ctx) => const TabsScreen(),
       //         ),
       //       );
-      //     }
+      //     }xs
       //   },
       // ),
       body: WillPopScope(
