@@ -57,7 +57,7 @@ const availableCategories = [
   ),
 ];
 
-List<Meal> dummyMeals = [
+const dummyMeals = [
   Meal(
     id: 'm1',
     categories: [
@@ -91,7 +91,6 @@ List<Meal> dummyMeals = [
     isVegan: true,
     isVegetarian: true,
     isLactoseFree: true,
-    isFavourite: false,
   ),
   Meal(
     id: 'm2',
@@ -120,7 +119,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: false,
     isLactoseFree: false,
-    isFavourite: false,
   ),
   Meal(
     id: 'm3',
@@ -153,7 +151,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: false,
     isLactoseFree: true,
-    isFavourite: false,
   ),
   Meal(
     id: 'm4',
@@ -189,7 +186,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: false,
     isLactoseFree: false,
-    isFavourite: false,
   ),
   Meal(
     id: 'm5',
@@ -226,7 +222,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: true,
     isLactoseFree: true,
-    isFavourite: false,
   ),
   Meal(
     id: 'm6',
@@ -263,7 +258,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: true,
     isLactoseFree: false,
-    isFavourite: false,
   ),
   Meal(
     id: 'm7',
@@ -295,7 +289,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: true,
     isLactoseFree: false,
-    isFavourite: false,
   ),
   Meal(
     id: 'm8',
@@ -329,7 +322,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: false,
     isLactoseFree: true,
-    isFavourite: false,
   ),
   Meal(
     id: 'm9',
@@ -379,7 +371,6 @@ List<Meal> dummyMeals = [
     isVegan: false,
     isVegetarian: true,
     isLactoseFree: false,
-    isFavourite: false,
   ),
   Meal(
     id: 'm10',
@@ -414,6 +405,5 @@ List<Meal> dummyMeals = [
     isVegan: true,
     isVegetarian: true,
     isLactoseFree: true,
-    isFavourite: false,
   ),
 ];
